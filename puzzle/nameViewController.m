@@ -87,7 +87,7 @@
 */
 
 - (IBAction)save:(id)sender {
-    ViewController *next=[[ViewController alloc]init];
+    //ViewController *next=[[ViewController alloc]init];
     
     AppDelegate *appdelegate=[[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *contact=[NSEntityDescription insertNewObjectForEntityForName:@"Numbers" inManagedObjectContext:appdelegate.managedObjectContext];

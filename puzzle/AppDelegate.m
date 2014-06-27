@@ -132,13 +132,18 @@
 
 -(NSArray *)getname
 {
+    NSArray *fetchrecord=[[NSArray alloc]init];
     NSFetchRequest *fetch=[[NSFetchRequest alloc]init];
     NSEntityDescription *entitydescription=[NSEntityDescription entityForName:@"Numbers" inManagedObjectContext:self.managedObjectContext];
     [fetch setEntity:entitydescription];
     NSError *error=nil;
-    NSArray *fetchrecord=[self.managedObjectContext executeFetchRequest:fetch error:&error];
+   fetchrecord=[self.managedObjectContext executeFetchRequest:fetch error:&error];
+    
     NSManagedObjectContext *data=[fetchrecord objectAtIndex:0];
-  kid=[data valueForKey:@"names"];
+     kid=[data valueForKey:@"names"];
+    
+    //NSArray *result=[[NSArray alloc]initWithObjects:kid, nil];
+   // NSLog(@"final==%@",[result description]);
     return kid;
     
 }
